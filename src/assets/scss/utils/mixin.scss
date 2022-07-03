@@ -1,0 +1,54 @@
+@mixin crop-height($number) {
+  display: -webkit-box;
+  -webkit-line-clamp: $number;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+@mixin font-face(
+  $font-family,
+  $file-path,
+  $weight: normal,
+  $style: normal,
+  $asset-pipeline: false
+) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+
+    src: url("#{$file-path}.ttf") format("truetype");
+  }
+}
+
+
+@mixin _1440 {
+  @media (max-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin _1200 {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin _992 {
+  @media screen and (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin _768 {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin _576 {
+  @media screen and (max-width: 576px) {
+    @content;
+  }
+}

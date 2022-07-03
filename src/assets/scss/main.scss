@@ -1,0 +1,101 @@
+//Импорты утилит
+@import "utils/reset";
+@import "utils/mixin";
+@import "utils/fonts";
+@import "utils/vars";
+@import "utils/animate";
+@import "utils/helpers";
+
+//Импорты модули
+
+//Импорты страниц
+
+
+
+html {
+  overflow: hidden;
+}
+
+*,
+:after,
+:before {
+  transition: background 400ms ease 0s, box-shadow 400ms ease 0s;
+}
+
+body {
+  font-size: 14px;
+  font-weight: 400;
+  height: 100vh;
+  overflow-y: auto;
+  font-family: var(--font-family);
+  scrollbar-color: var(--light-green) var(--transparent);
+  scrollbar-width: thin;
+  //
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--light-green);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--transparent);
+  }
+
+  @include _768 {
+    font-size: 12px;
+  }
+}
+
+a {
+  color: var(--ternary);
+}
+
+button,
+input,
+textarea {
+  font-family: var(--font-family);
+  color: var(--ternary);
+}
+
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--seventh);
+  color: var(--ternary);
+
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  flex-grow: 1;
+}
+
+.main__wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 10px;
+  width: 100%;
+  max-width: 1240px;
+  @include _1200 {
+    max-width: 992px;
+  }
+  @include _992 {
+    max-width: 768px;
+  }
+  @include _768 {
+    max-width: 576px;
+  }
+  @include _576 {
+    max-width: 320px;
+  }
+}
